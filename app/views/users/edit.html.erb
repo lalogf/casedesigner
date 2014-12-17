@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<img class="img-circle" style="text-align:center" src="<%= @user.avatar.url(:thumb) %>">
+
+			<%= bootstrap_form_for(@user) do |f|%>
+			
+			<%= f.text_field(:firstname) %>
+			<%= f.text_field(:lastname) %>
+			<%= f.text_area(:quote)%>
+			<%= f.file_field(:avatar) %>
+			
+			
+
+			<%= f.submit  "Edit", class: "btn btn-warning" %>
+			<%end%>
+
+			<%= bootstrap_form_for @user, method: 'delete' do  %>
+			<%= submit_tag "Delete User", class: "btn btn-danger" %>
+			<% end %>
+
+			<a href="" class="btn btn-primary">View store</a>
+		</div>
+	</div>
+</div> 
+
+
+
+
+

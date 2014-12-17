@@ -1,0 +1,19 @@
+<div class="row" id="avatar" >
+	<div class="col-md-3 pic">
+		<img src="<%= @user.avatar.url %>" class="img-circle">
+		<p class="title">
+			<span class="name">
+				<%= @user.firstname %>
+				<%= @user.lastname %>
+			</span>
+		</p>
+	</div>
+
+	<div class="col-md-7">
+		<p id="quote">
+			<span class="quotes">"</span>
+				<%= @user.quote %>
+			<span class="quotes">"</span>
+		</p>
+	</div>
+</div>
