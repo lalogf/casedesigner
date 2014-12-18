@@ -2,20 +2,21 @@ var canvas;
 var imgElement; 
 var imgInstance;
 var butn;
+var cod;
 
 
 
 
 $(document).ready(function(){
   createCanvas();
-  createImage();
-  butn = document.getElementById("createcase");
-  butn.addEventListener("click", function(event){
+  
+  $(".designtocase").click(function(){
+    cod = (parseInt(this.id) - 1);
+    createImage(cod);
     event.preventDefault();
     canvas.add(imgInstance);
     $('#newcaseimage').val(canvas.toDataURL('image/png'));
-  }, 
-  false);
+  });
 });
 
 
@@ -30,13 +31,12 @@ var createCanvas = function (){
 }; 
 
 
-var createImage = function(){
-  imgElement = $('#my-image')[0];
+var createImage = function(cod){
+  imgElement = $('.designtocase')[cod];
   imgInstance = new fabric.Image(imgElement, {
     height: 600,
     width: 400,
     left: 0,
     top: 0,
   });
-  // console.log(canvas.toDataURL('image/png'));
 };

@@ -3,14 +3,16 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6">
-		<%= image_tag @designs[1].image.url(:medium), :id => 'my-image' %>
+		<% @designs.each do |el| %>
+			<%= image_tag el.image.url, :id => el.id.to_s, :class => 'designtocase', :style => 'height:200px; width:200px' %>
+		<%end%>	
+
 		</div>
 		<div class="col-md-6">
 			<canvas id="c"></canvas>
 		</div>
 		
-		<a id="createcase" class="btn btn-success">Create Case</a>
-	
+
 	</div>
 	<div>
 
@@ -23,7 +25,7 @@
 
 			<%= f.text_area(:model) %>
 	
-			<input id="newcaseimage" name="newcaseimage" type="text">
+			<input id="newcaseimage" name="newcaseimage" type="hidden" type="text">
 
 
 			<%= f.submit  "Submit", class: "btn btn-success" %>

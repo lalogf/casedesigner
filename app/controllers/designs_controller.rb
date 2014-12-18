@@ -19,7 +19,7 @@ class DesignsController < ApplicationController
 
 	def create
 		Design.create(design_params.merge(user_id: params[:user_id]))
-		redirect_to user_designs_path
+		redirect_to new_user_product_path
 	end
 
 	def destroy
