@@ -10,7 +10,8 @@ end
 
 
 def show
-	@prod = Product.where(user_id: params[:id])	
+	# @prod = Product.where(user_id: params[:id])	
+	redirect_to "/users/"+ @user.id.to_s + "/preview"
 end
 def store
 	@prod = Product.where(user_id: params[:id])
