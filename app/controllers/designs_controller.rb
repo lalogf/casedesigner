@@ -10,7 +10,6 @@ class DesignsController < ApplicationController
 	end
 
 	def show
-
 	end
 	
 	def new
@@ -22,18 +21,18 @@ class DesignsController < ApplicationController
 		redirect_to new_user_product_path
 	end
 
-	def destroy
-		
-	end
-	
 	def edit
-		
-	end
-	
-	def update
-		
 	end
 
+	def update
+		@design.update(design_params)
+		redirect_to root_path
+	end
+	
+	def destroy
+ 		@design.destroy
+ 		redirect_to root_path		
+	end
 
 
 

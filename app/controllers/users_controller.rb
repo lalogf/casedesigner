@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :set_user, only: [:show, :edit, :update, :destroy, :preview]
 
 def index
 	@users = User.all
@@ -22,7 +22,7 @@ def create
 
       if @user.save
         UserMailer.welcome_email(@user).deliver
-		redirect_to "/"
+		redirect_to new_user_design_path(user_id: @user.id)
       else
 		render :new 
       end
@@ -41,6 +41,11 @@ end
 def destroy
 	@user.destroy
 	redirect_to root_path
+end
+
+
+def preview
+	@prod = Product.where(user_id: params[:id])	
 end
 
 

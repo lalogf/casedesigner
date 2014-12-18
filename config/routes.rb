@@ -4,13 +4,14 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
+
   resources :users do
     resources :products
     resources :designs
 
   end
 
-
+  get 'users/preview/:id' => 'users#preview'
 
 
   # You can have the root of your site routed with "root"

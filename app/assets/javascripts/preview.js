@@ -11,13 +11,13 @@ $(document).ready(function(){
   createCanvas();
   $('#my-select').change(function(){
     if($('#my-select').val() == "iPhone 5"){
-      canvas.setOverlayImage('/assets/i5.png', canvas.renderAll.bind(canvas))
+      canvas.setOverlayImage('https://s3.amazonaws.com/spacioc/i5.png', canvas.renderAll.bind(canvas))
     } else if ($('#my-select').val() == "Galaxy S5") {
-      canvas.setOverlayImage('/assets/s52.png', canvas.renderAll.bind(canvas))
+      canvas.setOverlayImage('https://s3.amazonaws.com/spacioc/s52.png', canvas.renderAll.bind(canvas))
     } else if ($('#my-select').val() == "Moto G"){
-      canvas.setOverlayImage('/assets/motog.png', canvas.renderAll.bind(canvas))
+      canvas.setOverlayImage('https://s3.amazonaws.com/spacioc/motog.png', canvas.renderAll.bind(canvas))
     } else {
-      canvas.setOverlayImage('/assets/i6.png', canvas.renderAll.bind(canvas))
+      canvas.setOverlayImage('https://s3.amazonaws.com/spacioc/i6.png', canvas.renderAll.bind(canvas))
     }
   });
   

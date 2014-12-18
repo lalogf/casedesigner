@@ -33,10 +33,14 @@ class ProductsController < ApplicationController
 		
 	end
 	def update
-		
+		@product.update(product_params)
+		redirect_to "/"
+
 	end
+	
 	def destroy
-		
+		@product.destroy
+		redirect_to "/"
 	end
 
 
@@ -51,6 +55,6 @@ class ProductsController < ApplicationController
 		end
 
 		def product_params
-			params.require(:design).permit(:model, :case_image)
+			params.require(:product).permit(:model, :case_image)
 		end
 end
