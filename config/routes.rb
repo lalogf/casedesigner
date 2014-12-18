@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   end
 
-  get 'users/preview/:id' => 'users#preview'
+  get 'users/:id/preview' => 'users#preview'
+
+  get 'store/:id' => 'users#store'
 
 
   # You can have the root of your site routed with "root"

@@ -20,12 +20,27 @@
 <div class="container">
 
 	<div class="row">
+		
+		<h1><span class="imp">This is a preview of your store</span></h1>
+		<% if @prod.length == 0 && @design.length == 0 %>
+		<h4>Start uploading your designs</h4>
+		<a href="/users/<%= @user.id %>/designs/new" class="btn btn-success">Upload</a>
+		<% elsif @prod.length == 0 && @design.length > 0 %>
+		<a href="/users/<%= @user.id %>/products/new" class="btn btn-warning">Make a new one from an existing design</a>
+		<% else %>
+		<a href="/users/<%= @user.id %>/products/new" class="btn btn-warning">Make a new one from an existing design</a>
+		<a href="/users/<%= @user.id %>/designs/new" class="btn btn-primary">Upload a new design</a>
+		<a href="/users/<%= @user.id %>/designs" class="btn btn-neutral">View your designs</a>
+	
+		<% end %>
+	</div>
+	<div class="row">	
 		<% @prod.each do |el| %>
 		<div class="col-sm-6 col-md-4">
 			<div class="thumbnail">
 				<img class="product" src="<%= el.case_image.url(:thumb)%>" alt="...">
 				<div class="caption">
-					<h3 class="pull-right price">100</h3>
+					<h3 class="pull-right price">30</h3>
 					<h3>Thumbnail label</h3><br>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -33,7 +48,8 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						<p class="col-md-6 col-md-offset-3"><a href="#" class="btn btn-primary" role="button">Add to cart</a></p>
+						
+						<p class="col-md-6"><a href="#" class="btn btn-primary" role="button">Add to cart</a></p><p class="col-md-6"><a href="/users/<%=@user.id%>/products/<%=el.id%>/edit" class="btn btn-danger" role="button">Edit</a></p>
 					</div>
 				</div>
 			</div>

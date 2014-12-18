@@ -1,6 +1,14 @@
 <div class="container">
 	<div class="row">
-		<h1>Create your case </h1>
+		<% if @productall %>
+		<h1>Create a new case </h1>
+
+		
+		<% else %>
+		<h1>Start creating yor first case</h1>
+		
+		<%end%>
+		
 
 
 
@@ -8,7 +16,7 @@
 
 			<%= bootstrap_form_for [@user, @product] do |f| %>
 			<div class="col-md-4">
-			<%= f.select :model, [["iPhone 6", "iPhone 6"], ["iPhone 5", "iPhone 5"], ["Galaxy S5", "Galaxy S5"], ["Moto G", "Moto G"]], { label: "Choose your favorite device" }, {id: "my-select"} %>
+			<%= f.select :model, [["iPhone 6", "iPhone 6"], ["iPhone 5", "iPhone 5"], ["Galaxy S5", "Galaxy S5"], ["Moto G", "Moto G"],["t-shirt", "t-shirt"]], { label: "Choose your favorite device" }, {id: "my-select"} %>
 			</div>
 	
 			<input id="newcaseimage" name="newcaseimage" type="hidden" type="text">
@@ -36,7 +44,7 @@
 		<div class="col-md-6">
 			<canvas id="c"></canvas>
 		</div>
-					<%= f.submit  "Submit", class: "btn btn-success" %>
+					<%= f.submit  "Submit", class: "btn btn-success", id: "create" %>
 
 			<%end%>
 

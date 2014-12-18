@@ -13,4 +13,20 @@
 				<a href="" class="btn btn-warning"> Buy</a></p>
 			</div>
 		</div>
+		<div class="row">
+			<h2>See our current sellers</h2>
+			<% @users.each do |el|%>
+			<div class="col-md-4">
+				<div class="col-md-12">
+					<img class="img-circle prev" src="<%= el.avatar.url(:medium) %>">
+				</div>
+<!-- 				<div class="col-md-12">
+					<h4 style="text-align:left"> <%= el.firstname %> <%= el.lastname %></h4>
+				</div> -->
+				<div class="col-md-6 col-md-offset-3">
+					<a href="/store/<%=el.id%>" class="btn btn-success viewstore"><%= el.firstname %> <%= el.lastname %></a>
+				</div>
+			</div>
+			<% end %>
+		</div>
 	</div>

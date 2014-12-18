@@ -13,6 +13,13 @@ body{
 	color:black;
 }
 
+.prev{
+	width: 200px;
+	height: 200px;
+}
+.viewstore{
+	margin-left: -50px;
+}
 .show{
 	margin-top: 10px;
 }
@@ -23,6 +30,10 @@ body{
 
 .navbar-brand{
 	font-family: 'Shadows Into Light', cursive;
+}
+
+.imp{
+	background-color: #ffff00;
 }
 /*Avatar*/
 
@@ -82,6 +93,23 @@ body{
 	font-size: 15px;
 }
 
+.btn-neutral{
+	border: solid 2px #000000;
+	border-radius: 0px;
+	color: black;
+	background:none;
+	font-size: 15px;
+}
+
+.btn-neutral:hover{
+	border: solid 2px #000000;
+	background: none;
+	background-color: #000000;
+	color:white;
+	font-size: 15px;
+}
+
+
 .btn-success{
 	border: solid 2px #27ae60;
 	border-radius: 0px;
@@ -114,6 +142,21 @@ body{
 	font-size: 15px;
 }
 
+.btn-danger{
+	border: solid 2px red;
+	border-radius: 0px;
+	color: black;
+	background:none;
+	font-size: 15px;
+}
+
+.btn-danger:hover{
+	border: solid 2px red;
+	background: none;
+	background-color: red;
+	color:white;
+	font-size: 15px;
+}
 .avatarpic{
 	width: 150px;
 	height: 150px;
@@ -136,7 +179,9 @@ body{
 
 .container{
 	margin-top: 20px;
+	margin-bottom: 20px;
 }
+
 
 .help-block, .has-error{
 	color:red !important
