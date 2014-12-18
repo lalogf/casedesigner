@@ -47,7 +47,7 @@ var createCanvas = function (){
   canvas = new fabric.Canvas('c');
   canvas.setHeight(600);
   canvas.setWidth(400);
-  canvas.setOverlayImage('/assets/i6.png', canvas.renderAll.bind(canvas));
+  canvas.setOverlayImage('https://s3.amazonaws.com/spacioc/i6.png', canvas.renderAll.bind(canvas));
 }; 
 
 
