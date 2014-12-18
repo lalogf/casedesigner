@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<table class="table">
+			<tr><th>Hello</th></tr>
+			<tr><td>I'm</td></tr>
+
+		</table>
+	</div>
+
+	<% @prod.each do |link|%> 
+
+	<%= image_tag link.case_image.url(:thumb), :id => 'prod'%>
+
+	<% end %>
+
+
+	
+
+</div>

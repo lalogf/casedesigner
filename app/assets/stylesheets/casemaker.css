@@ -1,0 +1,32 @@
+canvas {
+	width: 380px;
+	height: 500px;
+	border: black dashed 1px;
+/*	background-image: url('assets/iphone6.png');
+	background-size: cover;
+	background-position: -20px;*/
+}
+
+
+#logo{
+	width: 100px;
+	height: 100px;
+}
+
+#case{
+	width: 400px;
+	height: 534px;
+	display: none;
+}
+
+#pattern{
+	display: none;
+}
+
+.btn{
+	margin-top: 20px;
+}
+
+#myform{
+	margin-top: 100px;
+}

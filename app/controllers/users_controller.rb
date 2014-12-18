@@ -1,9 +1,16 @@
 class UsersController < ApplicationController
 
+	
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 def index
 	@users = User.all
+end
+
+
+
+def show
+	@prod = Product.where(user_id: params[:id])	
 end
 
 def new
@@ -46,4 +53,9 @@ private
       params.require(:user).permit(:firstname, :lastname, :email, :password, :quote, :avatar)
     end
 
+
 end
+
+
+
+

@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 20141217215354) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "case_file_name"
-    t.string   "case_content_type"
-    t.integer  "case_file_size"
-    t.datetime "case_updated_at"
+    t.string   "case_image_file_name"
+    t.string   "case_image_content_type"
+    t.integer  "case_image_file_size"
+    t.datetime "case_image_updated_at"
   end
 
   create_table "users", force: true do |t|
