@@ -3,15 +3,18 @@
 		<h1>Excellent designs</h1>
 		<p>Choose which one you want to use to create a new case</p>
 		<% @design.each do |link|%> 
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<div class="col-md-12">
-					<%= image_tag link.image.url(:thumb), :id => 'what'%>
+					<%= image_tag link.image.url(:medium), :style =>"width:250px; height:250px" %>
 				</div>
 				<div class="col-md-12">
-					<a href="/users/<%= link.user_id %>/products/new" name="<%= link.id %>"class="btn btn-primary createprod">Create case</a>
+					<a href="/users/<%= link.user_id %>/designs/<%=link.id%>/edit" class="btn btn-warning createprod">Edit design</a>
 				</div>
 			</div>
 		<% end %>
+
+
+
 	</div>
 </div>
 

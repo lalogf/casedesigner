@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Edit your design</h1>
+			<div class="col-md-3">
+				<%= image_tag @design.image.url(:thumb) %>
+			</div>	
+			<div class="col-md-4">
+				<%=bootstrap_form_for [@user, @design] do |f|%>
+					<%= f.text_area :description %>
+					<%= f.file_field :image %>
+				<div class="col-md-6">
+					<%= f.submit 'Edit', :class => 'btn btn-warning' %>
+				</div>
+				<%end%>
+
+				<%=bootstrap_form_for [@user, @design], method: 'delete' do %>
+				<div class="col-md-6">
+					<%= submit_tag "Delete product", class: "btn btn-danger" %>
+				</div>
+				<%end%>
+			</div>
+		</div>
+	</div>
+</div>

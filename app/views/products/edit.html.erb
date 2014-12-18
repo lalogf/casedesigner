@@ -1,0 +1,32 @@
+<div class="container">	
+	<div class="row">
+		<h2>Edit your product</h2>
+		<div class="col-md-3">
+			<%= image_tag @product.case_image.url(:thumb) %>
+		</div>
+		<div class="col-md-4">
+			<%=bootstrap_form_for [@user, @product] do |f|%>
+				<%= f.text_field :model %>
+			<div class="col-md-6">
+				<%= f.submit 'Edit', :class => 'btn btn-warning' %>
+			</div>
+			<%end%>
+			<%=bootstrap_form_for [@user, @product], method: 'delete' do %>
+			<div class="col-md-6">
+				<%= submit_tag "Delete product", class: "btn btn-danger" %>
+			</div>
+			<%end%>
+
+
+		</div>
+
+
+
+
+	</div>
+</div>
+
+
+
+
+

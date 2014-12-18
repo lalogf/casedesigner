@@ -1,36 +1,47 @@
-<h1>Lalo</h1>
-
 <div class="container">
 	<div class="row">
+		<h1>Create your case </h1>
+
+
+
+		<div class="col-md-12">
+
+			<%= bootstrap_form_for [@user, @product] do |f| %>
+			<div class="col-md-4">
+			<%= f.select :model, [["iPhone 6", "iPhone 6"], ["iPhone 5", "iPhone 5"], ["Galaxy S5", "Galaxy S5"], ["Moto G", "Moto G"]], { label: "Choose your favorite device" }, {id: "my-select"} %>
+			</div>
+	
+			<input id="newcaseimage" name="newcaseimage" type="hidden" type="text">
+
+
+
+		</div>
+
+
+
+
+
+
 		<div class="col-md-6">
+		<% i = 0 %>	
 		<% @designs.each do |el| %>
-			<%= image_tag el.image.url, :id => el.id.to_s, :class => 'designtocase', :style => 'height:200px; width:200px' %>
+		<div class="col-md-6 show">
+		<%= image_tag el.image.url, :id => i.to_s, :class => 'designtocase', :style => 'height:200px; width:200px' %>
+
+		<% i = i + 1 %>
+		</div>
 		<%end%>	
 
 		</div>
 		<div class="col-md-6">
 			<canvas id="c"></canvas>
 		</div>
-		
+					<%= f.submit  "Submit", class: "btn btn-success" %>
+
+			<%end%>
 
 	</div>
 	<div>
 
-
-
-
-		<div class="col-md-6">
-
-			<%= bootstrap_form_for [@user, @product] do |f| %>
-
-			<%= f.text_area(:model) %>
-	
-			<input id="newcaseimage" name="newcaseimage" type="hidden" type="text">
-
-
-			<%= f.submit  "Submit", class: "btn btn-success" %>
-
-			<%end%>
-		</div>
 	</div>
 </div>
