@@ -5,8 +5,10 @@
 
 			<%= bootstrap_form_for [@user, @design] do |f| %>
 
-			<%= f.text_area(:description, placeholder: "Describe your design") %>
 			<%= f.file_field(:image) %>
+			
+			<%= f.text_area(:description, placeholder: "Describe your design") %>
+			
 			<%= f.submit  "Submit", class: "btn btn-success" %>
 
 			<%end%>
