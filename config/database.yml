@@ -10,6 +10,7 @@ default: &default
 
 development:
   <<: *default
+  # database: designer_development
   database: caser
 
 # Warning: The database defined as "test" will be erased and
