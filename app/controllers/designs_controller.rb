@@ -2,6 +2,7 @@ class DesignsController < ApplicationController
 	
 	before_filter :set_user, only:[:new, :edit] 
 	before_action :set_design, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!
 
 
 

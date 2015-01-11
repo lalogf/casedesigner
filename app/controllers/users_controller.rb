@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	
 	before_action :set_user, only: [:show, :edit, :update, :destroy, :preview, :store]
+	before_action :authenticate_user!, only:[:preview]
 
 def index
 	@users = User.all
@@ -11,26 +12,10 @@ end
 
 def show
 	# @prod = Product.where(user_id: params[:id])	
-	redirect_to "/users/"+ @user.id.to_s + "/preview"
+	# redirect_to "/users/"+ @user.id.to_s + "/preview"
 end
 def store
 	@prod = Product.where(user_id: params[:id])
-end
-
-def new
-	@user = User.new
-end
-
-def create
-	@user = User.new(user_params)
-
-      if @user.save
-        UserMailer.welcome_email(@user).deliver
-		redirect_to "/users/"+ @user.id.to_s + "/preview"
-      else
-		render :new 
-      end
-
 end
 
 def edit

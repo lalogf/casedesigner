@@ -17,3 +17,6 @@
 
 # Ignore application configuration
 /config/application.yml
+public/system/designs
+public/system/products
+public/system/users

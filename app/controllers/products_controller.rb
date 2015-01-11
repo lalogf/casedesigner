@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 	before_filter :set_user, only:[:new, :edit, :preview]
 	before_filter :getproducts, only:[:new]  
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!
 
 	def index
 		
