@@ -18,7 +18,7 @@
 
 				<% else %>
 				<p>
-					<a href="" class="btn btn-warning"> Buy</a></p>
+					<a href="" class="btn btn-warning"> Buy</a>
 					<%= link_to "Preview", user_preview_path(current_user.id), class: "btn btn-warning"%>
 				</p>
 				<% end %>
@@ -31,11 +31,9 @@
 				<div class="col-md-12">
 					<img class="img-circle prev" src="<%= el.avatar.url(:medium) %>">
 				</div>
-<!-- 				<div class="col-md-12">
-					<h4 style="text-align:left"> <%= el.firstname %> <%= el.lastname %></h4>
-				</div> -->
+
 				<div class="col-md-6 col-md-offset-3">
-					<a href="/store/<%=el.id%>" class="btn btn-success viewstore"><%= el.firstname %> <%= el.lastname %></a>
+					<%= link_to el.firstname+" "+el.lastname, user_store_url(el.slug), class: "btn btn-success viewstore" %>
 				</div>
 			</div>
 			<% end %>
