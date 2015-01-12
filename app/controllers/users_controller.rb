@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 	
 	before_action :set_user, only: [:show, :edit, :update, :destroy, :preview, :store]
 	before_action :authenticate_user!, only:[:preview]
+	before_action :validate_user, only:[:preview]
+	
 
 def index
 	@users = User.all
@@ -34,8 +36,13 @@ end
 
 
 def preview
-	@prod = Product.where(user_id: params[:id])	
-	@design = Design.where(user_id: params[:id])
+
+		@prod = Product.where(user_id: params[:id])	
+		@design = Design.where(user_id: params[:id])
+	
+		# @prod = Product.where(user_id: current_user.id)
+		# @design = Design.where(user_id: current_user.id)
+
 end
 
 
@@ -47,6 +54,12 @@ private
     def user_params
       params.require(:user).permit(:firstname, :lastname, :email, :password, :quote, :avatar)
     end
+    # def ability
+    # 	return unless session[:id]
+    # 	@current_user ||= User.find(session[:id]) 
+    # end
+
+
 
 
 end
