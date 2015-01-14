@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 	before_filter :getproducts, only:[:new]  
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
-	# before_action :validate_user_id
+	before_action :validate_user_id, only:[:new, :edit, :update, :detroy]
 
 	def index
 		

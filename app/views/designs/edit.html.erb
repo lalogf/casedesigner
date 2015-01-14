@@ -7,7 +7,7 @@
 			</div>	
 			<div class="col-md-4">
 				<%=bootstrap_form_for [@user, @design] do |f|%>
-					<%= f.text_area :description %>
+		
 					<%= f.file_field :image %>
 				<div class="col-md-6">
 					<%= f.submit 'Edit', :class => 'btn btn-warning' %>

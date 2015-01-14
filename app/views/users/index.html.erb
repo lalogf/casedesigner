@@ -13,18 +13,18 @@
 
 					<%= link_to "Create a new account", new_user_registration_path , class: "btn btn-success"%>
 					<%= link_to "Login", new_user_session_path , class: "btn btn-primary"%>
-					<a href="" class="btn btn-warning"> Buy</a>
+					<a href="#stores" class="btn btn-warning"> Buy</a>
 				</p>
 
 				<% else %>
 				<p>
-					<a href="" class="btn btn-warning"> Buy</a>
-					<%= link_to "Preview", user_preview_path(current_user.id), class: "btn btn-warning"%>
+					<a href="#stores" class="btn btn-warning"> Buy</a>
+					<%= link_to "Edit your store", user_preview_path(current_user.id), class: "btn btn-primary"%>
 				</p>
 				<% end %>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="stores">
 			<h2>See our current sellers</h2>
 			<% @users.each do |el|%>
 			<div class="col-md-4">
