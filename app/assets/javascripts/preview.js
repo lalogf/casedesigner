@@ -9,15 +9,13 @@ var cod;
 
 $(document).ready(function(){
   createCanvas();
-  $('#my-select').change(function(){
-    if($('#my-select').val() == "iPhone 5"){
+  $('#myselect').change(function(){
+    if($('#myselect').val() == "iPhone 5"){
       canvas.setOverlayImage('/assets/i5.png', canvas.renderAll.bind(canvas))
-    } else if ($('#my-select').val() == "Galaxy S5") {
+    } else if ($('#myselect').val() == "Galaxy S5") {
       canvas.setOverlayImage('/assets/s52.png', canvas.renderAll.bind(canvas))
-    } else if ($('#my-select').val() == "Moto G"){
+    } else if ($('#myselect').val() == "Moto G"){
       canvas.setOverlayImage('/assets/motog.png', canvas.renderAll.bind(canvas))
-    } else if ($('#my-select').val() == "t-shirt"){
-      canvas.setOverlayImage('/assets/tshirt.png', canvas.renderAll.bind(canvas))
     } else {
       canvas.setOverlayImage('/assets/i6.png', canvas.renderAll.bind(canvas))
     }

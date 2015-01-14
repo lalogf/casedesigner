@@ -225,3 +225,13 @@ color: #000;
 .navbar-inverse .navbar-brand {
 color: #000;
 }
+
+/*#quote:before, #quote:after {
+display: block;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+top: -5px;
+color: #ffffff;
+}
+*/
