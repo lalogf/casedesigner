@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 	before_filter :getproducts, only:[:new]  
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
-	before_action :validate_user_id
+	# before_action :validate_user_id
 
 	def index
 		
@@ -27,8 +27,8 @@ class ProductsController < ApplicationController
 
 		new_file = File.open(file_name + '.png')
 
-		Product.create(model: params[:model], case_image: new_file, user_id: params[:user_id])
-		redirect_to "/users/"+ params[:user_id] + "/preview"
+		Product.create(model: params[:model], case_image: new_file, user_id: current_user.id)
+		redirect_to "/users/"+ current_user.id.to_s + "/preview"
 
 	end
 
@@ -37,13 +37,13 @@ class ProductsController < ApplicationController
 	end
 	def update
 		@product.update(product_params)
-		redirect_to "/users/"+ params[:user_id] + "/preview"
+		redirect_to "/users/"+ current_user.id.to_s + "/preview"
 
 	end
 	
 	def destroy
 		@product.destroy
-		redirect_to "/users/"+ params[:user_id] + "/preview"
+		redirect_to "/users/"+ current_user.id.to_s + "/preview"
 	end
 
 
@@ -57,7 +57,7 @@ class ProductsController < ApplicationController
 		end
 
 		def set_user
-			@user = User.find(params[:user_id])
+			@user = User.friendly.find(params[:user_id])
 		end
 
 		def product_params

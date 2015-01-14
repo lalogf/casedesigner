@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20150112090842) do
   enable_extension "plpgsql"
 
   create_table "designs", force: true do |t|
-    t.string   "description"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
