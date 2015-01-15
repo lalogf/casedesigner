@@ -27,28 +27,37 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">[ESP-C]</a>
+				<a class="navbar-brand" href="/">[SpC-C]</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				
 				<ul class="nav navbar-nav navbar-right">
 					<li><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></li>
-					<li><a href="#">Link</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li><a href="#">Action</a></li>
-							<li><a href="#">Another action</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Separated link</a></li>
-						</ul>
-					</li>
+					<% if user_signed_in? %>
+					<li><%= link_to current_user.email,  edit_user_registration_path %></li>
+					<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+					<% else %>
+					<li><%= link_to "Sign Up", new_user_registration_path %></li>
+					<li><%= link_to "Login", user_session_path %></li>
+					<%end%>
+
+
 				</ul>
 			</div>
 		</div>
 
 	</nav>	
+
+	<div class="container">
+		<div class="row">
+			<% if notice %>
+			<p class="alert alert-info"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+			<p class="alert alert-danger"><%= alert %></p>
+			<% end %>
+		</div>
+	</div>
 
 	<%= yield %>
 

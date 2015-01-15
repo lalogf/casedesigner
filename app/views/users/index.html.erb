@@ -3,28 +3,37 @@
 		<div class="jumbotron">
 			<h1>Case Maker!</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>	<a href="/users/new" class="btn btn-success"> Create a new account </a>
-				<a href="" class="btn btn-primary"> Login</a>
-				<a href="" class="btn btn-warning"> Buy</a></p>
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p>	
+					<% if !user_signed_in? %>
+
+					<%= link_to "Create a new account", new_user_registration_path , class: "btn btn-success"%>
+					<%= link_to "Login", new_user_session_path , class: "btn btn-primary"%>
+					<a href="#stores" class="btn btn-warning"> Buy</a>
+				</p>
+
+				<% else %>
+				<p>
+					<a href="#stores" class="btn btn-warning"> Buy</a>
+					<%= link_to "Edit your store", user_preview_path(current_user.id), class: "btn btn-primary"%>
+				</p>
+				<% end %>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="stores">
 			<h2>See our current sellers</h2>
 			<% @users.each do |el|%>
 			<div class="col-md-4">
 				<div class="col-md-12">
 					<img class="img-circle prev" src="<%= el.avatar.url(:medium) %>">
 				</div>
-<!-- 				<div class="col-md-12">
-					<h4 style="text-align:left"> <%= el.firstname %> <%= el.lastname %></h4>
-				</div> -->
+
 				<div class="col-md-6 col-md-offset-3">
-					<a href="/store/<%=el.id%>" class="btn btn-success viewstore"><%= el.firstname %> <%= el.lastname %></a>
+					<%= link_to el.firstname+" "+el.lastname, user_store_url(el.slug), class: "btn btn-success viewstore" %>
 				</div>
 			</div>
 			<% end %>

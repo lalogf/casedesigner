@@ -1,0 +1,24 @@
+<h2>Sign up</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|%>
+      <%= devise_error_messages! %>
+
+      <%= f.text_field(:firstname, placeholder: "First name", autofocus: true ) %>
+      <%= f.text_field(:lastname, placeholder: "Last name") %>
+      <%= f.email_field :email%>
+      <%= f.password_field :password, autocomplete: "off", help: "Must be at least 6 characters long" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+
+      <%= f.text_area(:quote, placeholder: "Select a quote for your store", :cols => "30", :rows => "10")  %>
+      <%= f.file_field(:avatar) %>
+      <%= f.submit  "Sign up", class: "btn btn-success" %>
+
+      <%end%>
+
+      
+    </div>
+  </div>
+</div>
