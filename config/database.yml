@@ -5,13 +5,13 @@ default: &default
   timeout: 5000
   host: localhost
   port: 5432
-  username: postgres
-  password: emrAsjGd7XG9
+  # username: postgres
+  # password: emrAsjGd7XG9
 
 development:
   <<: *default
-  # database: designer_development
-  database: caser
+  database: designer_development
+  # database: caser
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
