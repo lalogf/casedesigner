@@ -7,7 +7,7 @@ var cod;
 
 
 
-$(document).ready(function(){
+var ready = function(){
   createCanvas();
   $('#myselect').change(function(){
     if($('#myselect').val() == "iPhone 5"){
@@ -16,6 +16,8 @@ $(document).ready(function(){
       canvas.setOverlayImage('/assets/s52.png', canvas.renderAll.bind(canvas))
     } else if ($('#myselect').val() == "Moto G"){
       canvas.setOverlayImage('/assets/motog.png', canvas.renderAll.bind(canvas))
+    } else if ($('#myselect').val()==  "iPhone 4"){
+      canvas.setOverlayImage('/assets/i4.png', canvas.renderAll.bind(canvas))
     } else {
       canvas.setOverlayImage('/assets/i6.png', canvas.renderAll.bind(canvas))
     }
@@ -39,10 +41,7 @@ $(document).ready(function(){
       $('#newcaseimage').val(canvas.toDataURL('image/png'));
     }); 
   });
-});
-
-
-
+};
 
 
 var createCanvas = function (){
@@ -51,7 +50,6 @@ var createCanvas = function (){
   canvas.setWidth(400);
   canvas.setOverlayImage('/assets/i6.png', canvas.renderAll.bind(canvas));
 }; 
-
 
 var createImage = function(cod){
   imgElement = $('.designtocase')[cod];
@@ -111,7 +109,12 @@ var createImage = function(cod){
 // var createCanvas = function (){
 //   canvas = new fabric.Canvas('c');
 //   canvas.setHeight(600);
+
 //   canvas.setWidth(400);
 //   canvas.setOverlayImage('https://s3.amazonaws.com/spacioc/i6.png', canvas.renderAll.bind(canvas));
+
 // }; 
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
