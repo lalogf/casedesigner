@@ -2,17 +2,11 @@
 default: &default
   adapter: postgresql
   pool: 5
-
   timeout: 5000
   host: localhost
   port: 5432
-  username: postgres
-  password: jpjoCcHddB6M8T
-
-
-  # timeout: 5000
-  # host: localhost
-  # port: 5432
+  # username: postgres
+  # password: jpjoCcHddB6M8T
 
 
 development:
