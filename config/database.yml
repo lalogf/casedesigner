@@ -6,8 +6,8 @@ default: &default
   timeout: 5000
   host: localhost
   port: 5432
-  # username: postgres
-  # password: "jpjoCcHddB6M8T"
+  username: postgres
+  password: jpjoCcHddB6M8T
 
 
   # timeout: 5000
