@@ -1,12 +1,13 @@
 #Case designer
 
-Web tool to create custom phone cases. 
+Web tool to create custom phone cases. The final version is available at [SpacioC](http://www.spacioc.com)
 
 ## What do you need?
 
 * Create an account
 * Upload your designs
 * Create phone cases from your designs
+* Share your store
 
 ## Phone cases models available
 
