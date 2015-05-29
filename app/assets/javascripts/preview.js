@@ -19,7 +19,7 @@ var ready = function(){
       canvas.setOverlayImage('/assets/motog.png', canvas.renderAll.bind(canvas))
     } else if (($(this).val()) == 1){
       canvas.setOverlayImage('/assets/i6.png', canvas.renderAll.bind(canvas))
-    } else if(($(this).val()) == 3) {
+    } else if (($(this).val()) == 3) {
       canvas.setOverlayImage('/assets/i4t.png', canvas.renderAll.bind(canvas))
     }
   });
@@ -55,10 +55,10 @@ var createCanvas = function (){
 var createImage = function(cod){
   imgElement = $('.designtocase')[cod];
   imgInstance = new fabric.Image(imgElement, {
-    // height: 600,
-    // width: 400,
-    // scaleY:300/imgElement.width,
-    // scaleX:200/imgElement.width,
+    height: 600,
+    width: 400,
+    scaleY:300/imgElement.width,
+    scaleX:200/imgElement.width,
     left: 0,
     top: 0,
   },{ crossOrigin: 'anonymous' } );

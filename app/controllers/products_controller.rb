@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
 
 		new_file = File.open(file_name + '.png')
 
-		Product.create(model: params[:model], case_image: new_file, user_id: current_user.id)
+		Product.create(model_name: params[:product][:model_name], case_image: new_file, user_id: current_user.id)
 		redirect_to "/users/"+ current_user.id.to_s + "/preview"
 
 	end
@@ -61,6 +61,6 @@ class ProductsController < ApplicationController
 		end
 
 		def product_params
-			params.require(:product).permit(:model, :case_image)
+			params.require(:product).permit(:model, :case_image,:user_id)
 		end
 end

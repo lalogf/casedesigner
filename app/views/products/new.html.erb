@@ -1,55 +1,40 @@
 <div class="container">
 	<div class="row">
 		<% if @productall %>
-		<h1>Create a new case </h1>
-
-		
+			<h1>Create a new case </h1>
 		<% else %>
-		<h1>Start creating yor first case</h1>
-		
+			<h1>Start creating yor first case</h1>
 		<%end%>
 		
-
-
-
-		<div class="col-md-12">
-
-			<%= bootstrap_form_for [@user, @product] do |f| %>
-			<div class="col-md-4">
-			<%= f.select :model, [["iPhone 6", "1"], ["iPhone 5", "2"], ["iPhone 4", "3"],["Galaxy S5", "4"], ["Moto G", "5"]], { label: "Choose your favorite device" }, {id: "myselect"} %>
+		<div class="col-md-6">
+			<div class="col-md-12">
+				<% i = 0 %>	
+				<% @designs.each do |el| %>
+					<div class="col-md-6 show">
+						<%= image_tag el.image.url, :id => i.to_s, :class => 'designtocase', :style => 'height:200px; width:200px' %>
+						<% i = i + 1 %>
+					</div>
+				<%end%>	
 			</div>
-
-			<input id="newcaseimage" name="newcaseimage" type="hidden" type="text">
-
-
-
+			<div class="col-md-12" style="margin-top:20px;border-top:solid 1px black;border-bottom:solid 1px black">
+				<%= bootstrap_form_for [@user, @product] do |f| %>
+					<div class="col-md-12">
+						<%= f.select :model_name, [["iPhone 6", "1"], ["iPhone 5", "2"], ["iPhone 4", "3"],["Galaxy S5", "4"], ["Moto G", "5"]], { label: "Choose your favorite device" }, {id: "myselect"} %>
+					</div>
+					<input id="newcaseimage" name="newcaseimage" type="hidden" type="text">
+					<br>
+					<div class="col-md-12">
+						<%= f.submit  "Submit", class: "btn btn-success", id: "create", style: "margin-bottom:10px" %>
+					</div>
+				<% end %>
+			</div>
 		</div>
-
-
-
-
-
 
 		<div class="col-md-6">
-		<% i = 0 %>	
-		<% @designs.each do |el| %>
-		<div class="col-md-6 show">
-		<%= image_tag el.image.url, :id => i.to_s, :class => 'designtocase', :style => 'height:200px; width:200px' %>
 
-		<% i = i + 1 %>
+			<div class="col-md-12">
+				<canvas id="c"></canvas>
+			</div>
 		</div>
-		<%end%>	
-
-		</div>
-		<div class="col-md-6">
-			<canvas id="c"></canvas>
-		</div>
-					<%= f.submit  "Submit", class: "btn btn-success", id: "create" %>
-
-			<%end%>
-
-	</div>
-	<div>
-
 	</div>
 </div>
