@@ -17,6 +17,10 @@ Web tool to create custom phone cases. The final version is available at [Spacio
 * Galaxy S5
 * Moto G
 
+
+![](http://www.ucarecdn.com/1c44d034-7ac4-4be2-aaba-0ef2a4292ed7/ScreenShot20150529at93127AM.png)
+
+![](http://www.ucarecdn.com/98d18306-17a7-4c10-b420-b3c49bfb2141/ScreenShot20150529at93057AM.png)
 ## Technology used
 
 This project was build using Ruby on Rails and deployed to AWS.
